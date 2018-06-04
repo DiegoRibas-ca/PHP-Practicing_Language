@@ -5,6 +5,21 @@ class Book
     public $title;
     public $author;
     public $available;
+    
+    public function __contruct(int $isbn, string $title, string $author, int $available = 0) {
+        $this->isbn = $isbn;
+        $this->title = $title;
+        $this->author = $author;
+        $this->available = $available;
+    }
+
+    public function __toString() {
+        $result = $this->title . ' by ' . $this->author;
+        if (!$this->available) {
+            $result .= ' Not Available';
+        }
+        return $result;
+    }
 
     public function getPrintableTible() {
         $result = $this->title . ' by ' . $this->author;
@@ -23,11 +38,11 @@ class Book
     }
 }
 
-$harry_potter = new Book();
-$harry_potter->isbn = 989437943894; 
-$harry_potter->title = "Harry Potter and the Prisioner of Askabam"; 
-$harry_potter->author = "JK"; 
-$harry_potter->available = 10; 
+$harry_potter = new Book(989437943894, "Harry Potter and the Prisioner of Askabam", "JK", 10);
+// $harry_potter->isbn = 989437943894; 
+// $harry_potter->title = "Harry Potter and the Prisioner of Askabam"; 
+// $harry_potter->author = "JK"; 
+// $harry_potter->available = 10; 
 
 if($harry_potter->getCopy()) {
     echo 'Here is your copy of ' . $harry_potter->title. '<br>';
@@ -35,6 +50,6 @@ if($harry_potter->getCopy()) {
     echo 'Sorry its gone!';
 }
 
-var_dump($harry_potter);
+echo $harry_potter;
 
 ?>
