@@ -38,18 +38,5 @@ class Book
     }
 }
 
-$harry_potter = new Book(989437943894, "Harry Potter and the Prisioner of Askabam", "JK", 10);
-// $harry_potter->isbn = 989437943894; 
-// $harry_potter->title = "Harry Potter and the Prisioner of Askabam"; 
-// $harry_potter->author = "JK"; 
-// $harry_potter->available = 10; 
 
-if($harry_potter->getCopy()) {
-    echo 'Here is your copy of ' . $harry_potter->title. '<br>';
-} else {
-    echo 'Sorry its gone!';
-}
 
-echo $harry_potter;
-
-?>
