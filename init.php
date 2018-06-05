@@ -9,4 +9,5 @@ $first_customer = new Customer(1, "Diego", "Ribas", "diego@gmail.com");
 
 echo $harry_potter;
 
-var_dump($first_customer);
+var_dump($first_customer->getFullName());
+var_dump($first_customer->setEmail('diegoribas@gmail.com'));
